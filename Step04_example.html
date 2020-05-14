@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steo04_example.html</title>
+</head>
+<body>
+    <h1>array 테스트중</h1>
+    <input type="text" id="msg" placeholder="할 일 입력">
+    <button onclick="save()">저장하기</button>
+    <button onclick="show()">저장된 내용 보기</button>
+    <p id="console"></p>
+
+    <script>
+        var msgs = [];
+        function save(){
+            // msgs.push(document.querySelector("#msg").value);
+
+            //입력한 문자열을 읽어온다.
+            var line = document.querySelector("#msg").value;
+
+            //배열에 저장(누적)시킨다.
+            msgs.push(line); 
+
+            alert("저장되었습니다.");
+
+            //입력한 내용 clear
+            document.querySelector("#msg").value = "";
+            
+        }
+        function show(){
+            // for(var i = 0; i < msgs.length; i++){
+            //     document.querySelector("#console").innerText += (i+1) + "번째 msgs = " + msgs[i] + "\n";
+            // }
+
+            for(var i = 0; i <msgs.length; i++){
+                var line = msgs[i];
+                console.log(line);
+                document.querySelector("#console").innerText += msgs[i];
+            }
+            
+        }
+    </script>
+</body>
+</html>
