@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_Example.html</title>
+</head>
+<body>
+    <input type="text" id="inputMsg">
+    <button id="sendBtn">전송</button>
+    <p id="console"></p>
+    <script>
+
+        document.querySelector("#sendBtn").addEventListener("click", function(){
+            var msg = document.querySelector("#inputMsg").value;                //input 요소에 입력한 value 값 읽어오기
+            document.querySelector("#console").innerText = msg;                 //p 요소의 innerText에 반영
+            document.querySelector("#inputMsg").value = "";                     //입력창 초기화
+
+            
+        });
+        //input 요소에 keydown 이벤트가 일어났을 때 호출되는 함수 등록
+        document.querySelector("#inputMsg").addEventListener("keyup",function(event){       
+
+            if(event.key == "Enter"){               //조건부 수행 블럭
+            
+                var msg = document.querySelector("#inputMsg").value;                //input 요소에 입력한 value 값 읽어오기
+            
+                document.querySelector("#console").innerText = msg;                 //p 요소의 innerText에 반영
+            
+                document.querySelector("#inputMsg").value = "";                     //입력창 초기화   
+            }
+            
+        })
+    </script>
+</body>
+</html>
