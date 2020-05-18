@@ -13,14 +13,24 @@
     <p>p4</p>
     <p>p5</p>
 
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+
     <button id="printbtn">출력</button>
     <script>
         var names = ["김구라","해골","원숭이","주뎅이","덩어리"];
-
+        var school = ["초등학교","중학교","대학교"];
         // //array type의 forEach()함수 호출하면서 함수 전달하기
         // names.forEach(function(item, index){
         //     console.log(item, index);
         // });
+
+        document.querySelector("#printbtn").addEventListener("click", function(){
+            school.forEach(function(item, index){
+                document.querySelectorAll("div")[index].innerText = item;
+            })
+        })
 
         document.querySelector("#printbtn").addEventListener("click",function(){
             names.forEach(function(item, index){
