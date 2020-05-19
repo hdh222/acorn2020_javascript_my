@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_example.html</title>
+</head>
+<body>
+    <h1>반복문 활용 예제 테스트 중...</h1>
+    <input type="text" id = "inputName" placeholder = "검색 할 이름">
+    <button id = "findbtn">검색</button>
+    <p id = "console"></p>
+    <script>
+        //친구 정보를 담을 배열
+        var friends = [];
+        //배열에 sample 데이터 담기
+        friends.push({name:"김구라", phone : "010-1111-2222", email : "aaa@naver.com"});        
+        friends.push({name:"김진호", phone : "010-2222-3333", email : "bbb@naver.com"});        
+        friends.push({name:"이봉하", phone : "010-3333-4444", email : "ccc@naver.com"});        
+        friends.push({name:"이세희", phone : "010-4444-5555", email : "ddd@naver.com"});        
+        friends.push({name:"백운용", phone : "010-5555-6666", email : "eee@naver.com"});               
+
+        document.querySelector("#findbtn").addEventListener("click",function(){
+            //입력한 이름 저장
+            var name = document.querySelector("#inputName").value;                              
+
+            //반복하며 배열에 저장된 이름과 입력하여 저장 된 이름 비교
+            for(var i = 0; i < friends.length; i++){
+                if(name == friends[i].name){                
+                    //해당 정보를 p요소에 innerText 변경
+                    document.querySelector("#console").innerText = "이름 : " + friends[i].name + " 전화번호 : " + friends[i].phone
+                                                                    + " 이메일 : " + friends[i].email;
+                    break; 
+                }else{
+                    document.querySelector("#console").innerText = "정보가 존재하지 않습니다.";     //정보가 없다는 문장 p요소에 innerText변경
+                }
+            }
+        })
+    </script>
+</body>
+</html>
