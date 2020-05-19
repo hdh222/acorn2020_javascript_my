@@ -23,17 +23,20 @@
         document.querySelector("#findbtn").addEventListener("click",function(){
             //입력한 이름 저장
             var name = document.querySelector("#inputName").value;                              
-
             //반복하며 배열에 저장된 이름과 입력하여 저장 된 이름 비교
+
+            var isExist = false;        //검색된 데이터가 존재하는지 여부를 초기값을 정해두고 초기값의 변경여부로 확인.
+
             for(var i = 0; i < friends.length; i++){
                 if(name == friends[i].name){                
                     //해당 정보를 p요소에 innerText 변경
                     document.querySelector("#console").innerText = "이름 : " + friends[i].name + " 전화번호 : " + friends[i].phone
-                                                                    + " 이메일 : " + friends[i].email;
-                    break; 
-                }else{
-                    document.querySelector("#console").innerText = "정보가 존재하지 않습니다.";     //정보가 없다는 문장 p요소에 innerText변경
+                    isExist = true;     //검색된 이름이 존재한다고 표시
                 }
+            }
+            //for문 종료 후에 if 문 블럭에 실행순서가 갔었는지 여부를 알고 싶다면.
+            if(isExist == false){
+                document.querySelector("#console").innerText = name + "으로 검색된 정보는 없습니다.";
             }
         })
     </script>
