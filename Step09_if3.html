@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_if3.html</title>
+</head>
+<body>
+    <h1>다중 if 문 테스트중 ...</h1>
+    <button id="inputBtn">점수 입력</button>
+    <p id="console"></p>
+    <script>
+        document.querySelector("#inputBtn").addEventListener("click",function(){
+            //입력받은 문자열을 숫자로 바꿔서 변수에 담는다.
+            var jumsu = parseFloat(prompt("점수(0~100)을 입력하세요 "));
+
+            /*
+                점수가 90 이상 A
+                점수가 80 이상 B
+                점수가 70 이상 C
+                점수가 60 이상 D
+                점수가 60 미만 F
+
+                라는 문자열을 p요소에 출력해보세요.
+            */
+
+            // if(jumsu >= 90){                                                            //90이상 
+            //     document.querySelector("#console").innerText = "A"
+            // }else if(jumsu >= 80){                                                      //80이상
+            //     document.querySelector("#console").innerText = "B"
+            // }else if(jumsu >= 70){                                                      //70이상
+            //     document.querySelector("#console").innerText = "C"
+            // }else if(jumsu >= 60){                                                      //60이상
+            //     document.querySelector("#console").innerText = "D"
+            // }else{                                                                      //60미만
+            //     document.querySelector("#console").innerText = "F"
+            var grade;
+            if(jumsu >= 90){                                                            //90이상 
+                grade = "A"
+            }else if(jumsu >= 80){                                                      //80이상
+                grade = "B";
+            }else if(jumsu >= 70){                                                      //70이상
+                grade = "C";
+            }else if(jumsu >= 60){                                                      //60이상
+                grade = "D";
+            }else{        
+                grade = "F";                                                              //60미만
+            }
+            document.querySelector("#console").innerText = grade;
+        });
+    </script>
+</body>
+</html>
