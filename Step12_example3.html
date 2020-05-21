@@ -68,12 +68,12 @@
 
 
             //row 삭제
-            tr.addEventListener("click",()=>{
+            tr.addEventListener("click",function(){
                 let isDelete;
                 
                 isDelete = confirm("삭제하시겠습니까?");
                 if(isDelete == 1){
-                    tr.remove();
+                    this.remove();
                 }
             });
         });
