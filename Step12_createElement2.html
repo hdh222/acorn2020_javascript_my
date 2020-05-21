@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>createElement2.html</h1>
+
+    <div id="wrapper">
+
+    </div>
+
+    <script>
+        /*
+            <a href="hello.html" class="my-link""">이동하기</a>
+            위와 같은 구조의 a요소를 동적으로 만들기
+        */
+        
+        let i = 0;
+
+        //setInterval은 원하는 주기마다 전달된 함수를 호출한다.
+        setInterval(function(){
+            let newLink = document.createElement("a");
+            newLink.innerText = "이동하기";
+            newLink.setAttribute("href","hello.html");
+            newLink.setAttribute("class","my-link");
+            document.querySelector("#wrapper").append(newLink);
+        }, 300)
+
+    </script>
+</body>
+</html>
