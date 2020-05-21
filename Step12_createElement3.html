@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_createElement3.html</title>
+</head>
+<body>
+    <h1>createElement 테스트</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>주소</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>김구라</td>
+                <td>노량진</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //td 요소 만들어서 참조값을 변수 td1에 담기
+        let td1 = document.createElement("td");
+        //td 요소에 innerText 출력
+        td1.innerText = "해골";
+        let td2 = document.createElement("td");
+        td2.innerText = "행신동"
+        
+        //tr요소 만들어서 참조값을 tr변수에 담기
+        let tr = document.createElement("tr");
+        //td를 tr에 append하기
+        tr.append(td1);
+        tr.append(td2);
+        //tbody에 tr append하기
+        document.querySelector("tbody").append(tr);
+    </script>
+</body>
+</html>
