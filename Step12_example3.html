@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_example3.html</title>
+    <style>
+         tbody>tr:hover{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement 테스트</h1>
+
+    <input type="text" id = "inputNum" placeholder="번호 입력">
+    <input type="text" id = "inputName" placeholder="이름 입력">
+    <input type="text" id = "inputAddr" placeholder="주소 입력">
+    <button id = "addBtn">추가</button>
+    <table border = "1">
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>이름</td>
+                <td>주소</td>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script>
+        document.querySelector("#addBtn").addEventListener("click",()=>{
+            //변수 선언
+            let td1, td2, td3, tr;
+
+            //요소 참조값 저장
+            td1 = document.createElement("td");
+            td2 = document.createElement("td");
+            td3 = document.createElement("td");
+            tr = document.createElement("tr");
+
+            //innerText 변경
+            td1.innerText = document.querySelector("#inputNum").value;
+            td2.innerText = document.querySelector("#inputName").value;
+            td3.innerText = document.querySelector("#inputAddr").value;
+
+            //tr요소에 td요소 append
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            
+            //tbody에 append
+            document.querySelector("tbody").append(tr);
+            
+            //input요소 value 초기화
+            document.querySelector("#inputNum").value = "";
+            document.querySelector("#inputName").value = "";
+            document.querySelector("#inputAddr").value = "";
+
+            // tr.addEventListener("mouseover",()=>{
+            //     tr.style.backgroundColor = "yellow";    
+            // });
+            // tr.addEventListener("mouseout",()=>{
+            //     tr.style.backgroundColor = "white";
+            // })
+            
+
+
+            //row 삭제
+            tr.addEventListener("click",()=>{
+                let isDelete;
+                
+                isDelete = confirm("삭제하시겠습니까?");
+                if(isDelete == 1){
+                    tr.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
