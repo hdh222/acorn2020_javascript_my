@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueryExample_Table01.html</title>
+</head>
+<body>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        $("<table>").appendTo("body")
+                    .attr("border","1");
+        // $("<cation>").text("테이블").appendTo("table");
+        $("<thead>").appendTo("table");
+        $("<tr>").appendTo("thead");
+        $("<td>").text("이름").appendTo("tr");
+        $("<td>").text("전화번호").appendTo("tr");
+        
+        $("btn").on("click",function(){
+            
+        });
+
+
+    </script>
+    <button id ="btn">입력</button>
+</body>
+</html>

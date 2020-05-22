@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step12_example3.html</title>
     <style>
-         tbody>tr:hover{
-            background-color: yellowgreen;
-        }
-    </style>
+        tbody>tr:hover{
+           background-color: yellowgreen;
+       }
+   </style>
 </head>
 <body>
     <script src="js/jquery-3.5.1.js"></script>
@@ -36,15 +36,21 @@
             let td1, td2, td3, tr;
 
             //요소 참조값 저장
-            td1 = document.createElement("td");
-            td2 = document.createElement("td");
-            td3 = document.createElement("td");
-            tr = document.createElement("tr");
+            td1 = $("<td>");
+            td2 = $("<td>");
+            td3 = $("<td>");
+            tr = $("<tr>");
+
+            //input value 저장
+            let td1_msg = $("#inputNum").val();
+            let td2_msg = $("#inputName").val();
+            let td3_msg = $("#inputAddr").val();
 
             //innerText 변경
-            td1.innerText = document.querySelector("#inputNum").value;
-            td2.innerText = document.querySelector("#inputName").value;
-            td3.innerText = document.querySelector("#inputAddr").value;
+        
+            td1.text(td1_msg);
+            td2.text(td2_msg);
+            td3.text(td3_msg);
 
             //tr요소에 td요소 append
             tr.append(td1);
@@ -52,40 +58,24 @@
             tr.append(td3);
             
             //tbody에 append
-            document.querySelector("tbody").append(tr);
+            tr.appendTo("tbody");
             
             //input요소 value 초기화
-            document.querySelector("#inputNum").value = "";
-            document.querySelector("#inputName").value = "";
-            document.querySelector("#inputAddr").value = "";
-
-            // tr.addEventListener("mouseover",()=>{
-            //     tr.style.backgroundColor = "yellow";    
-            // });
-            // tr.addEventListener("mouseout",()=>{
-            //     tr.style.backgroundColor = "white";
-            // })
-            
-
-
+            $("#inputNum").val("");
+            $("#inputName").val("");
+            $("#inputAddr").val("");
+      
             //row 삭제
-            tr.addEventListener("click",function(){
+            $("tr").on("click",function(){
+                console.log("확인1");
                 let isDelete;
                 
-                isDelete = confirm("삭제하시겠습니까?");
+                isDelete = confirm("삭제?");
                 if(isDelete == 1){
                     this.remove();
                 }
-            });
-            // $("tr").on("click",function(){
-            //     console.log("확인1");
-            //     let isDelete;
-                
-            //     isDelete = confirm("삭제?");
-            //     if(isDelete == 1){
-            //         this.remove();
-            //     }
-            // })
+            })
+            
                 
             
                 
