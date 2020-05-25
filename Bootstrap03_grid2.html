@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        .row div{
+            border:1px dotted green;
+            
+        }
+    </style>
+</head>
+<body>                    <!-- 1 => 0.25rem = 4px   px-1(padding left, right가 4px)
+                                2 => 0.5rem = 8px   px-2(padding left, right가 8px)
+                                3 -> 1rem = 16px    px-3(padding left, right가 16px)
+                                4. 1.5rem = 24px    my-1(margin top, bottom이 4px)
+                                5. 3rem =48px -->
+                            <!-- px-lg-n5 같이 숫자에 n붙은것은 마이너스임-->
+    <div class="container px-lg-5">
+        <h1>이미지 출력하기</h1>
+        <div class="row">
+            <div class="col-3"><img src="images/image1.png" alt="" class ="img-fluid"></div>
+            <div class="col-3"><img src="images/image2.png" alt="" class ="img-fluid"></div>
+            <div class="col-3"><img src="images/image3.png" alt="" class ="img-fluid"></div>
+            <div class="col-3"><img src="images/image4.png" alt="" class ="img-fluid"></div>
+        </div>
+
+        <h1>이미지 출력하기2</h1>
+        <div class="row">
+            <div class="col"><img src="images/image1.png" alt="" class ="img-fluid"></div>
+            <div class="col"><img src="images/image2.png" alt="" class ="img-fluid"></div>
+            <div class="col"><img src="images/image3.png" alt="" class ="img-fluid"></div>
+            <div class="col"><img src="images/image4.png" alt="" class ="img-fluid"></div>
+        </div>
+
+        <h1>이미지 출력하기3</h1>
+        <div class="row">
+            <!-- col-sm-6 {width:50%;} col-md-3{width:25%;} -->
+            <!-- sm보다 md가 나중에 정의되어 있으므로 800픽셀일 경우 크기는 25%가 됨.(md이하도 정의되어 있지만 나중에 정의된 값)-->
+            <!-- 화면의 크기에 따라 -->
+            <div class="col-sm-5 col-md-3"><img src="images/image1.png" alt="" class ="img-fluid"></div>
+            <div class="col-sm-5 col-md-3"><img src="images/image2.png" alt="" class ="img-fluid"></div>
+            <div class="col-sm-5 col-md-3"><img src="images/image3.png" alt="" class ="img-fluid"></div>
+            <div class="col-sm-5 col-md-3"><img src="images/image4.png" alt="" class ="img-fluid"></div>
+        </div>
+    </div>
+</body>
+</html>
