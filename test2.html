@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            margin:10px;
+            background-color: yellow;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener 함수 테스트중</h1>
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    <div class="box">div4</div>
+    <div class="box">div5</div>
+
+    <p id="as1">p1</p>
+    <p id="as2">p2</p>
+    <p id="as3" class="wwqre">p3</p>
+    <p id="as4" class="wwqre">p4</p>
+    <p id="as5">p5</p>
+    <script>
+        var names = ["김구라","해골","원숭이","덩어리","주뎅이"];
+        var divs = document.querySelectorAll("div");
+
+        for(let i = 0; i < names.length; i++){
+            divs[i].addEventListener("click", function(){
+                var name = names[i];
+                this.innerText = name;
+            });
+        }
+        document.querySelector("#as1").innerText = names[0];
+        
+        let p = document.createElement("p");
+        p.setAttribute("class","wwqre");
+        p.innerText = "abcd";
+
+        
+        
+        info = [{num:1, name:"kim"},{num:2, name:"hong"}];
+        info2 = {name:"kim", phone:"010", num:1};
+    </script>
+</body>
+</html>
